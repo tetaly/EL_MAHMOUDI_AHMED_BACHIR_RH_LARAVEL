@@ -1,0 +1,169 @@
+@import 'tailwindcss';
+
+@import 'tw-animate-css';
+
+@source '../views';
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+    --font-sans:
+        'Instrument Sans', ui-sans-serif, system-ui, sans-serif,
+        'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+        'Noto Color Emoji';
+
+    --radius-lg: var(--radius);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-sm: calc(var(--radius) - 4px);
+
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+
+    --color-destructive: var(--destructive);
+    --color-destructive-foreground: var(--destructive-foreground);
+
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+
+    --color-chart-1: var(--chart-1);
+    --color-chart-2: var(--chart-2);
+    --color-chart-3: var(--chart-3);
+    --color-chart-4: var(--chart-4);
+    --color-chart-5: var(--chart-5);
+
+    --color-sidebar: var(--sidebar);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+    --background: #f6f1e8;
+    --foreground: #19332e;
+    --card: #fffdf8;
+    --card-foreground: #19332e;
+    --popover: #fffdf8;
+    --popover-foreground: #19332e;
+    --primary: #0f5a4e;
+    --primary-foreground: #fffaf0;
+    --secondary: #eee5d7;
+    --secondary-foreground: #26443e;
+    --muted: #eee9df;
+    --muted-foreground: #6f7c76;
+    --accent: #e9a06f;
+    --accent-foreground: #40271d;
+    --destructive: #b94c41;
+    --destructive-foreground: #fff8f2;
+    --border: #ddd4c6;
+    --input: #d7cdbf;
+    --ring: #da7c4e;
+    --chart-1: #0f5a4e;
+    --chart-2: #da7c4e;
+    --chart-3: #e0b94f;
+    --chart-4: #4d7f71;
+    --chart-5: #963f35;
+    --radius: 0.9rem;
+    --sidebar: #123f38;
+    --sidebar-foreground: #f8f1e6;
+    --sidebar-primary: #e69a68;
+    --sidebar-primary-foreground: #173a34;
+    --sidebar-accent: #23564d;
+    --sidebar-accent-foreground: #fffaf0;
+    --sidebar-border: #38675e;
+    --sidebar-ring: #e69a68;
+}
+
+.dark {
+    --background: #101816;
+    --foreground: #edf4f1;
+    --card: #172522;
+    --card-foreground: #edf4f1;
+    --popover: #172522;
+    --popover-foreground: #edf4f1;
+    --primary: #62b3a2;
+    --primary-foreground: #0b211c;
+    --secondary: #22332f;
+    --secondary-foreground: #e2ece8;
+    --muted: #22302d;
+    --muted-foreground: #9caaa5;
+    --accent: #31443f;
+    --accent-foreground: #edf4f1;
+    --destructive: #dc6b62;
+    --destructive-foreground: #fff5f3;
+    --border: #31413d;
+    --input: #42524e;
+    --ring: #62b3a2;
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+
+    body {
+        @apply bg-background text-foreground;
+        font-feature-settings:
+            'ss01' on,
+            'cv11' on;
+    }
+
+    input,
+    select,
+    textarea {
+        @apply bg-card text-foreground transition duration-200 focus:border-primary focus:ring-2 focus:ring-primary/15 focus:outline-none;
+    }
+}
+
+@layer components {
+    .rh-panel {
+        @apply overflow-hidden rounded-xl border border-border bg-card shadow-sm;
+    }
+
+    .rh-table thead {
+        @apply border-b border-border bg-muted text-muted-foreground;
+    }
+
+    .rh-table th {
+        @apply px-5 py-3 text-xs font-semibold tracking-wide uppercase;
+    }
+
+    .rh-table td {
+        @apply px-5 py-4;
+    }
+
+    .rh-table tbody tr {
+        @apply border-b border-border transition-colors last:border-0 hover:bg-muted/60;
+    }
+
+    .rh-form-panel {
+        @apply rounded-xl border border-border bg-card shadow-sm;
+    }
+
+    .rh-kicker {
+        @apply mb-1 text-xs font-semibold text-[#648078];
+    }
+}
