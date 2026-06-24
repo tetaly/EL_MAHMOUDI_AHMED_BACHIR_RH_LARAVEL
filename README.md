@@ -21,7 +21,7 @@ Le projet a été réalisé avec Laravel, Inertia.js et React selon le cahier de
 - Laravel 13 ;
 - MySQL ;
 - Inertia.js 3 ;
-- React 19 et TypeScript ;
+- React 19 et JavaScript (JSX) ;
 - Tailwind CSS 4 ;
 - Vite 8 ;
 - Pest 4.
@@ -148,7 +148,6 @@ composer types:check
 # Vérifications frontend
 npm run lint:check
 npm run format:check
-npm run types:check
 ```
 
 ## Structure principale
